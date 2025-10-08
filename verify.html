@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Verify Email</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body class="antialiased bg-gray-50">
+        <main class="min-h-screen flex items-center justify-center p-6">
+            <section
+                class="w-full max-w-md bg-white rounded-2xl shadow-lg overflow-hidden"
+            >
+                <div
+                    class="px-6 py-8 bg-gradient-to-r from-sky-600 to-indigo-600 text-white"
+                >
+                    <h1 class="text-2xl font-semibold">Verify your email</h1>
+                    <p class="text-sm mt-1 opacity-90">
+                        Enter the 6-digit code we sent to your email.
+                    </p>
+                </div>
+
+                <div class="px-6 py-6">
+                    <form id="verify-form" class="space-y-6" novalidate>
+                        <fieldset>
+                            <legend class="sr-only">Verification code</legend>
+                            <label
+                                for="code"
+                                class="block text-sm font-medium text-gray-700 mb-3"
+                                >Verification code</label
+                            >
+
+                            <div id="code" class="flex gap-3 justify-center">
+                                <input
+                                    inputmode="numeric"
+                                    pattern="[0-9]*"
+                                    maxlength="1"
+                                    class="w-12 h-12 text-center rounded-lg border border-gray-200 bg-gray-50 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-sky-500"
+                                    aria-label="Digit 1"
+                                />
+                                <input
+                                    inputmode="numeric"
+                                    pattern="[0-9]*"
+                                    maxlength="1"
+                                    class="w-12 h-12 text-center rounded-lg border border-gray-200 bg-gray-50 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-sky-500"
+                                    aria-label="Digit 2"
+                                />
+                                <input
+                                    inputmode="numeric"
+                                    pattern="[0-9]*"
+                                    maxlength="1"
+                                    class="w-12 h-12 text-center rounded-lg border border-gray-200 bg-gray-50 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-sky-500"
+                                    aria-label="Digit 3"
+                                />
+                                <input
+                                    inputmode="numeric"
+                                    pattern="[0-9]*"
+                                    maxlength="1"
+                                    class="w-12 h-12 text-center rounded-lg border border-gray-200 bg-gray-50 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-sky-500"
+                                    aria-label="Digit 4"
+                                />
+                            </div>
+                        </fieldset>
+
+                        <div class="space-y-2">
+                            <button
+                                type="submit"
+                                class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-sky-600 hover:bg-sky-700 text-white py-2 px-4 text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-500"
+                            >
+                                Verify
+                            </button>
+
+                            <div class="text-center text-sm text-gray-600">
+                                <span>Didn't receive it?</span>
+                                <button
+                                    id="resend-btn"
+                                    type="button"
+                                    class="ml-2 text-sky-600 hover:underline"
+                                >
+                                    Resend code
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <p
+                        id="status"
+                        class="mt-4 text-center text-sm text-green-600 hidden"
+                    >
+                        Code sent.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
