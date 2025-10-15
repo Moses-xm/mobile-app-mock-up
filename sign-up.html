@@ -1,59 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sign Up</title>
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    </head>
-    <body>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mobile Mockup — AMood / Health Mock</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <meta name="description"
+        content="Mobile-first static mockup with top content area and bottom navigation bar. Accessible, responsive and touch-friendly." />
+    <style>
+        :root {
+            --bg: #f7f8fb;
+            --card: #ffffff;
+            --muted: #6b7280;
+            --primary: #2563eb;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --danger: #ef4444;
+            --glass: rgba(255, 255, 255, 0.6);
+            --radius: 14px;
+            --gap: 16px;
+            --nav-height: 72px;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color-scheme: light;
+        }
+
+        /* Mobile-first layout */
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #0f172a;
+            overflow: hidden;
+            /* reserve space for bottom nav */
+        }
+
+        .container {
+            max-width: 520px;
+            margin: 0 auto;
+            height: 100vh;
+            overflow-y: hidden;
+        }
+
+        /* Responsiveness */
+        @media (min-width:520px) {
+            body {
+                background: linear-gradient(90deg, #f7f8fb, #f3f5f9)
+            }
+
+            .container {
+                box-shadow: 0 10px 30px rgba(2, 6, 23, 0.04);
+                border-radius: 18px;
+                padding: 20px
+            }
+        }
+
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+                animation: none !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container" role="main">
         <div class="min-h-screen bg-gray-100 flex items-center justify-center">
             <div class="bg-white p-6 rounded shadow-md w-96">
                 <h1 class="text-lg font-bold mb-4">Sign Up</h1>
                 <form>
                     <div class="mb-4">
-                        <label
-                            for="email"
-                            class="block text-sm font-medium text-gray-700"
-                            >Email</label
-                        >
-                        <input
-                            type="email"
-                            id="email"
-                            class="mt-1 block w-full border border-gray-300 rounded-md p-2"
-                            required
-                        />
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" class="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                            required />
                     </div>
                     <div class="mb-4">
-                        <label
-                            for="password"
-                            class="block text-sm font-medium text-gray-700"
-                            >Password</label
-                        >
-                        <input
-                            type="password"
-                            id="password"
-                            class="mt-1 block w-full border border-gray-300 rounded-md p-2"
-                            required
-                        />
+                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" id="password"
+                            class="mt-1 block w-full border border-gray-300 rounded-md p-2" required />
                     </div>
                     <div class="mb-4">
-                        <label
-                            for="confirm-password"
-                            class="block text-sm font-medium text-gray-700"
-                            >Confirm Password</label
-                        >
-                        <input
-                            type="password"
-                            id="confirm-password"
-                            class="mt-1 block w-full border border-gray-300 rounded-md p-2"
-                            required
-                        />
+                        <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm
+                            Password</label>
+                        <input type="password" id="confirm-password"
+                            class="mt-1 block w-full border border-gray-300 rounded-md p-2" required />
                     </div>
-                    <button
-                        type="submit"
-                        class="w-full bg-blue-600 text-white p-2 rounded"
-                    >
+                    <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded">
                         Sign Up
                     </button>
 
@@ -64,5 +106,8 @@
                 </form>
             </div>
         </div>
-    </body>
+    </main>
+
+</body>
+
 </html>
